@@ -3,20 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF22611126B330B900D5734B /* OEVoice in Frameworks */ = {isa = PBXBuildFile; productRef = CF22611026B330B900D5734B /* OEVoice */; };
+		CF22611426B331F300D5734B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22611326B331F300D5734B /* ContentView.swift */; };
+		CF22611626B3321400D5734B /* TestWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22611526B3321400D5734B /* TestWords.swift */; };
+		CF22611826B3322800D5734B /* IPACharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22611726B3322800D5734B /* IPACharacters.swift */; };
 		CFCC2A8726B32D2C007BCCAD /* OEVoiceExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC2A8626B32D2C007BCCAD /* OEVoiceExampleApp.swift */; };
-		CFCC2A8926B32D2C007BCCAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC2A8826B32D2C007BCCAD /* ContentView.swift */; };
 		CFCC2A8B26B32D2D007BCCAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFCC2A8A26B32D2D007BCCAD /* Assets.xcassets */; };
 		CFCC2A8E26B32D2D007BCCAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFCC2A8D26B32D2D007BCCAD /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF22611226B330C700D5734B /* OEVoice */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OEVoice; path = ../OEVoice; sourceTree = "<group>"; };
+		CF22611326B331F300D5734B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../../../../../../Learn/Swift/TextToSpeech/TextToSpeech/TextToSpeech/ContentView.swift; sourceTree = "<group>"; };
+		CF22611526B3321400D5734B /* TestWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestWords.swift; path = ../../../../../../Learn/Swift/TextToSpeech/TextToSpeech/TextToSpeech/TestWords.swift; sourceTree = "<group>"; };
+		CF22611726B3322800D5734B /* IPACharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPACharacters.swift; path = ../../../../../../Learn/Swift/TextToSpeech/TextToSpeech/TextToSpeech/IPACharacters.swift; sourceTree = "<group>"; };
 		CFCC2A8326B32D2C007BCCAD /* OEVoiceExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OEVoiceExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFCC2A8626B32D2C007BCCAD /* OEVoiceExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEVoiceExampleApp.swift; sourceTree = "<group>"; };
-		CFCC2A8826B32D2C007BCCAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CFCC2A8A26B32D2D007BCCAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFCC2A8D26B32D2D007BCCAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -26,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF22611126B330B900D5734B /* OEVoice in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,6 +42,7 @@
 		CFCC2A7A26B32D2C007BCCAD = {
 			isa = PBXGroup;
 			children = (
+				CF22611226B330C700D5734B /* OEVoice */,
 				CFCC2A8526B32D2C007BCCAD /* OEVoiceExample */,
 				CFCC2A8426B32D2C007BCCAD /* Products */,
 			);
@@ -52,7 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				CFCC2A8626B32D2C007BCCAD /* OEVoiceExampleApp.swift */,
-				CFCC2A8826B32D2C007BCCAD /* ContentView.swift */,
+				CF22611326B331F300D5734B /* ContentView.swift */,
+				CF22611726B3322800D5734B /* IPACharacters.swift */,
+				CF22611526B3321400D5734B /* TestWords.swift */,
 				CFCC2A8A26B32D2D007BCCAD /* Assets.xcassets */,
 				CFCC2A8C26B32D2D007BCCAD /* Preview Content */,
 			);
@@ -83,6 +93,9 @@
 			dependencies = (
 			);
 			name = OEVoiceExample;
+			packageProductDependencies = (
+				CF22611026B330B900D5734B /* OEVoice */,
+			);
 			productName = OEVoiceExample;
 			productReference = CFCC2A8326B32D2C007BCCAD /* OEVoiceExample.app */;
 			productType = "com.apple.product-type.application";
@@ -103,7 +116,7 @@
 				};
 			};
 			buildConfigurationList = CFCC2A7E26B32D2C007BCCAD /* Build configuration list for PBXProject "OEVoiceExample" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -111,6 +124,9 @@
 				Base,
 			);
 			mainGroup = CFCC2A7A26B32D2C007BCCAD;
+			packageReferences = (
+				CF22610F26B330B900D5734B /* XCRemoteSwiftPackageReference "OEVoice" */,
+			);
 			productRefGroup = CFCC2A8426B32D2C007BCCAD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFCC2A8926B32D2C007BCCAD /* ContentView.swift in Sources */,
+				CF22611826B3322800D5734B /* IPACharacters.swift in Sources */,
+				CF22611426B331F300D5734B /* ContentView.swift in Sources */,
 				CFCC2A8726B32D2C007BCCAD /* OEVoiceExampleApp.swift in Sources */,
+				CF22611626B3321400D5734B /* TestWords.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +214,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -251,7 +269,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -343,6 +361,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF22610F26B330B900D5734B /* XCRemoteSwiftPackageReference "OEVoice" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ryanlintott/OEVoice.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF22611026B330B900D5734B /* OEVoice */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF22610F26B330B900D5734B /* XCRemoteSwiftPackageReference "OEVoice" */;
+			productName = OEVoice;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CFCC2A7B26B32D2C007BCCAD /* Project object */;
 }
