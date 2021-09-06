@@ -17,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CF22611226B330C700D5734B /* OEVoice */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OEVoice; path = ../OEVoice; sourceTree = "<group>"; };
 		CFADD5A126E6506D008F5170 /* TestWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWords.swift; sourceTree = "<group>"; };
 		CFADD5A226E6506D008F5170 /* IPACharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPACharacters.swift; sourceTree = "<group>"; };
 		CFADD5A326E6506D008F5170 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,7 +41,6 @@
 		CFCC2A7A26B32D2C007BCCAD = {
 			isa = PBXGroup;
 			children = (
-				CF22611226B330C700D5734B /* OEVoice */,
 				CFCC2A8526B32D2C007BCCAD /* OEVoiceExample */,
 				CFCC2A8426B32D2C007BCCAD /* Products */,
 			);
