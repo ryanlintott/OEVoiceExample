@@ -36,12 +36,11 @@ struct ContentView: View {
         }
     }
     
-    var oeVoice: OEVoice? {
-        OEVoice.allCases.first(where: { $0.voice == voice } )
-    }
-    
     var adjustedIPAString: String? {
-        oeVoice?.adjustIPAString(ipaString)
+        guard let voice = voice else {
+            return nil
+        }
+        return OEVoice(from: voice)?.adjustIPAString(ipaString)
     }
     
     var newAdjustment: String? {
@@ -89,7 +88,7 @@ struct ContentView: View {
                             Text(ipaString)
                             
                             Button("Play Raw") {
-                                speak(ipaString)
+                                speak(ipaString, applyAdjustements: false)
                             }
                         }
                         
@@ -97,7 +96,7 @@ struct ContentView: View {
                             Text("\(adjustedIPAString ?? "N/A")")
                             
                             Button("Play Adjusted") {
-                                speak(adjustedIPAString)
+                                speak(adjustedIPAString, applyAdjustements: false)
                             }
                             .disabled(adjustedIPAString == nil)
                         }
@@ -106,7 +105,7 @@ struct ContentView: View {
                             Text("\(newAdjustment ?? "N/A")")
                             
                             Button("Play New Adjusted") {
-                                speak(newAdjustment)
+                                speak(newAdjustment, applyAdjustements: false)
                             }
                             .disabled(newAdjustment == nil)
                         }
@@ -123,7 +122,7 @@ struct ContentView: View {
         }
     }
     
-    func speak(_ string: String?) {
+    func speak(_ string: String?, applyAdjustements: Bool) {
         guard let string = string else {
             print("Error: String is nil")
             return
@@ -132,10 +131,19 @@ struct ContentView: View {
             print("Error: String is empty")
             return
         }
-        do {
-            try OEVoice.speak(string, synthesizer: synthesizer)
-        } catch let error {
-            print(error.localizedDescription)
+        guard let voice = voice else {
+            print("Error: Voice is nil. Default voice used.")
+            return
+        }
+        
+        if let oeVoice = OEVoice(from: voice) {
+            do {
+                try OEVoice.speak(string, oeVoice: oeVoice, applyAdjustments: applyAdjustements, synthesizer: synthesizer)
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        } else {
+            synthesizer.speakIPA(string, voice: voice)
         }
     }
 }
