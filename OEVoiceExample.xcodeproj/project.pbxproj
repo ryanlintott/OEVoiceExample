@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CF22611126B330B900D5734B /* OEVoice in Frameworks */ = {isa = PBXBuildFile; productRef = CF22611026B330B900D5734B /* OEVoice */; };
-		CF22611426B331F300D5734B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22611326B331F300D5734B /* ContentView.swift */; };
-		CF22611626B3321400D5734B /* TestWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22611526B3321400D5734B /* TestWords.swift */; };
-		CF22611826B3322800D5734B /* IPACharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22611726B3322800D5734B /* IPACharacters.swift */; };
+		CFADD5A426E6506D008F5170 /* TestWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADD5A126E6506D008F5170 /* TestWords.swift */; };
+		CFADD5A526E6506D008F5170 /* IPACharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADD5A226E6506D008F5170 /* IPACharacters.swift */; };
+		CFADD5A626E6506D008F5170 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADD5A326E6506D008F5170 /* ContentView.swift */; };
 		CFCC2A8726B32D2C007BCCAD /* OEVoiceExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC2A8626B32D2C007BCCAD /* OEVoiceExampleApp.swift */; };
 		CFCC2A8B26B32D2D007BCCAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFCC2A8A26B32D2D007BCCAD /* Assets.xcassets */; };
 		CFCC2A8E26B32D2D007BCCAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFCC2A8D26B32D2D007BCCAD /* Preview Assets.xcassets */; };
@@ -18,9 +18,9 @@
 
 /* Begin PBXFileReference section */
 		CF22611226B330C700D5734B /* OEVoice */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OEVoice; path = ../OEVoice; sourceTree = "<group>"; };
-		CF22611326B331F300D5734B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../../../../../../Learn/Swift/TextToSpeech/TextToSpeech/TextToSpeech/ContentView.swift; sourceTree = "<group>"; };
-		CF22611526B3321400D5734B /* TestWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestWords.swift; path = ../../../../../../Learn/Swift/TextToSpeech/TextToSpeech/TextToSpeech/TestWords.swift; sourceTree = "<group>"; };
-		CF22611726B3322800D5734B /* IPACharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPACharacters.swift; path = ../../../../../../Learn/Swift/TextToSpeech/TextToSpeech/TextToSpeech/IPACharacters.swift; sourceTree = "<group>"; };
+		CFADD5A126E6506D008F5170 /* TestWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWords.swift; sourceTree = "<group>"; };
+		CFADD5A226E6506D008F5170 /* IPACharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPACharacters.swift; sourceTree = "<group>"; };
+		CFADD5A326E6506D008F5170 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CFCC2A8326B32D2C007BCCAD /* OEVoiceExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OEVoiceExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFCC2A8626B32D2C007BCCAD /* OEVoiceExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEVoiceExampleApp.swift; sourceTree = "<group>"; };
 		CFCC2A8A26B32D2D007BCCAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,9 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				CFCC2A8626B32D2C007BCCAD /* OEVoiceExampleApp.swift */,
-				CF22611326B331F300D5734B /* ContentView.swift */,
-				CF22611726B3322800D5734B /* IPACharacters.swift */,
-				CF22611526B3321400D5734B /* TestWords.swift */,
+				CFADD5A326E6506D008F5170 /* ContentView.swift */,
+				CFADD5A226E6506D008F5170 /* IPACharacters.swift */,
+				CFADD5A126E6506D008F5170 /* TestWords.swift */,
 				CFCC2A8A26B32D2D007BCCAD /* Assets.xcassets */,
 				CFCC2A8C26B32D2D007BCCAD /* Preview Content */,
 			);
@@ -153,10 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF22611826B3322800D5734B /* IPACharacters.swift in Sources */,
-				CF22611426B331F300D5734B /* ContentView.swift in Sources */,
 				CFCC2A8726B32D2C007BCCAD /* OEVoiceExampleApp.swift in Sources */,
-				CF22611626B3321400D5734B /* TestWords.swift in Sources */,
+				CFADD5A426E6506D008F5170 /* TestWords.swift in Sources */,
+				CFADD5A626E6506D008F5170 /* ContentView.swift in Sources */,
+				CFADD5A526E6506D008F5170 /* IPACharacters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
