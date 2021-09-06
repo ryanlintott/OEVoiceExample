@@ -24,6 +24,7 @@
 		CFCC2A8626B32D2C007BCCAD /* OEVoiceExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEVoiceExampleApp.swift; sourceTree = "<group>"; };
 		CFCC2A8A26B32D2D007BCCAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFCC2A8D26B32D2D007BCCAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CFFB95C526E6553500537DA9 /* OEVoice */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OEVoice; path = ../OEVoice; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +42,7 @@
 		CFCC2A7A26B32D2C007BCCAD = {
 			isa = PBXGroup;
 			children = (
+				CFFB95C526E6553500537DA9 /* OEVoice */,
 				CFCC2A8526B32D2C007BCCAD /* OEVoiceExample */,
 				CFCC2A8426B32D2C007BCCAD /* Products */,
 			);
