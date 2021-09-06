@@ -132,12 +132,11 @@ struct ContentView: View {
             print("Error: String is empty")
             return
         }
-        guard let voice = voice else {
-            print("Error: Voice is nil")
-            return
+        do {
+            try OEVoice.speak(string, synthesizer: synthesizer)
+        } catch let error {
+            print(error.localizedDescription)
         }
-
-        synthesizer.speakIPA(string, voice: voice)
     }
 }
 
