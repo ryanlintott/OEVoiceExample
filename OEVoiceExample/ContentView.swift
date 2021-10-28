@@ -115,6 +115,10 @@ struct ContentView: View {
                     Text("No voices available")
                 }
             }
+            
+            Button("Test Voice") {
+                synthesizer.simplifiedTestSpeakIPA()
+            }
         }
         .onAppear {
             voiceIdentifier = OEVoice.default.voice?.identifier ?? ""
