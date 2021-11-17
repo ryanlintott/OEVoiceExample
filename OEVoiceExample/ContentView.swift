@@ -15,8 +15,10 @@ struct ContentView: View {
     @State private var isEditingFilter = false
     @State private var voiceIdentifier = ""
     @State private var showingAllVoices = false
+    @State private var isShowingError = false
+    @State private var error = ""
     
-    let synthesizer = AVSpeechSynthesizer()
+    let synthesizer = AVSpeechSynthesizerIPA.oeVoiceSupported
     let allVoices = AVSpeechSynthesisVoice.speechVoices()
     var ipaVoices: [AVSpeechSynthesisVoice] {
         OEVoice.allCases.compactMap { $0.voice }
@@ -65,13 +67,16 @@ struct ContentView: View {
                 .pickerStyle(MenuPickerStyle())
             }
             
+            TextField("Filter", text: $filter) { isEditing in
+                isEditingFilter = isEditing
+            }
+            .autocapitalization(.none)
+            .disableAutocorrection(true)
             
-            TextField("Filter", text: $filter)
-                .autocapitalization(.none)
-                .disableAutocorrection(true)
-            
-            IPACharacters { character in
-                filter += String(character)
+            if isEditingFilter {
+                IPACharacters { character in
+                    filter += String(character)
+                }
             }
             
             Picker("IPA Word", selection: $ipaString) {
@@ -117,12 +122,21 @@ struct ContentView: View {
             }
             
             Button("Test Voice") {
-                synthesizer.simplifiedTestSpeakIPA()
+                synthesizer.simplifiedTestSpeakOE()
             }
         }
         .onAppear {
             voiceIdentifier = OEVoice.default.voice?.identifier ?? ""
             AVAudioSession.sharedInstance().setSpeechSession()
+        }
+        .alert(isPresented: $isShowingError) {
+            Alert(
+                title: Text("Error"),
+                message: Text(error),
+                dismissButton: .default(Text("OK")) {
+                    error = ""
+                }
+            )
         }
     }
     
@@ -142,8 +156,9 @@ struct ContentView: View {
         
         if let oeVoice = OEVoice(from: voice) {
             do {
-                try OEVoice.speak(string, oeVoice: oeVoice, applyAdjustments: applyAdjustements, synthesizer: synthesizer)
+                try OEVoice.speak(string, oeVoice: oeVoice, applyAdjustments: applyAdjustements, synthesizer: synthesizer, force: true)
             } catch let error {
+                self.error = error.localizedDescription
                 print(error.localizedDescription)
             }
         } else {
