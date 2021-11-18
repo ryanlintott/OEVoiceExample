@@ -122,7 +122,7 @@ struct ContentView: View {
             }
             
             Button("Test Voice") {
-                synthesizer.simplifiedTestSpeakOE()
+                synthesizer.speakOETest1()
             }
         }
         .onAppear {
