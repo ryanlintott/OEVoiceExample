@@ -121,6 +121,16 @@ struct ContentView: View {
                 }
             }
             
+            if #available(iOS 15, *) {
+                // Characters that don't work with AttributedString and IPA
+                // Āā Ǣǣ Ēē Īī Ōō Ūū Ȳȳ Ææ Ðð Þþ Ƿƿ
+                Text("Tǣst".oldEnglishIPAAttributed("ga"))
+                
+                Text("Here's some text".oldEnglishIPAAttributed("ga"))
+                
+                Text("Hwæt! We gardena in geardagum, þeodcyninga, þrym gefrunon, hu ða æþelingas ellen fremedon.".oldEnglishIPAAttributed("ˈhwæt ˈweː ˈgaːr-ˌdɛ-na ɪn ˈjɛar-ˌda-gʌm ˈθeːɔd-ˌky-nɪŋ-ga ˈθrym jɛ-ˈfruː-nɔn ˈhuː θaː ˈæ-θɛ-lɪŋ-gas ˈɛl-lɛn ˈfrɛ-mɛ-dɔn"))
+            }
+            
             Button("Test Voice") {
                 synthesizer.speakOETest1()
             }
