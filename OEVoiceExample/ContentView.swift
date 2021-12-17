@@ -54,6 +54,38 @@ struct ContentView: View {
         identifier.replacingOccurrences(of: OEVoice.idPrefix, with: "")
     }
     
+    @available (iOS 15, *)
+    var beowulf: AttributedString {
+        [
+            ("Hwæt", "ˈhwæt"),
+            ("! ", nil),
+            ("We", "ˈweː"),
+            (" ", nil),
+            ("gardena", "ˈgaːr-ˌdɛ-na"),
+            (" ", nil),
+            ("in", "ɪn"),
+            (" ", nil),
+            ("geardagum", "ˈjɛar-ˌda-gʌm"),
+            (", ", nil),
+            ("þeodcyninga", "ˈθeːɔd-ˌky-nɪŋ-ga"),
+            (", ", nil),
+            ("þrym", "ˈθrym"),
+            (" ", nil),
+            ("gefrunon", "jɛ-ˈfruː-nɔn"),
+            (", ", nil),
+            ("hu", "ˈhuː"),
+            (" ", nil),
+            ("ða", "θaː"),
+            (" ", nil),
+            ("æþelingas", "ˈæ-θɛ-lɪŋ-gas"),
+            (" ", nil),
+            ("ellen", "ˈɛl-lɛn"),
+            (" ", nil),
+            ("fremedon", "ˈfrɛ-mɛ-dɔn"),
+            (".", nil),
+        ].reduce(AttributedString(""), { $0 + AttributedString($1.0).accessibilityOldEnglishIPA($1.1) })
+    }
+    
     var body: some View {
         Form {
             Section(header: Text("Voice")) {
@@ -124,11 +156,13 @@ struct ContentView: View {
             if #available(iOS 15, *) {
                 // Characters that don't work with AttributedString and IPA
                 // Āā Ǣǣ Ēē Īī Ōō Ūū Ȳȳ Ææ Ðð Þþ Ƿƿ
-                Text("Tǣst".oldEnglishIPAAttributed("ga"))
-                
-                Text("Here's some text".oldEnglishIPAAttributed("ga"))
-                
-                Text("Hwæt! We gardena in geardagum, þeodcyninga, þrym gefrunon, hu ða æþelingas ellen fremedon.".oldEnglishIPAAttributed("ˈhwæt ˈweː ˈgaːr-ˌdɛ-na ɪn ˈjɛar-ˌda-gʌm ˈθeːɔd-ˌky-nɪŋ-ga ˈθrym jɛ-ˈfruː-nɔn ˈhuː θaː ˈæ-θɛ-lɪŋ-gas ˈɛl-lɛn ˈfrɛ-mɛ-dɔn"))
+                Text(beowulf)
+                    .onTapGesture {
+                        if let voice = voice {
+                            synthesizer.speak(beowulf, voice: voice)
+                        }
+                    }
+                    .accessibilityAddTraits([.playsSound, .startsMediaSession])
             }
             
             Button("Test Voice") {
