@@ -7,6 +7,9 @@
 .AppleDouble
 .LSOverride
 
+# Thumbnails
+._*
+
 ### Swift ###
 # Xcode
 #
@@ -104,6 +107,3 @@ iOSInjectionProject/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,macos
-
-# User-specific xcconfig files
-Xcode-config/DEVELOPMENT_TEAM.xcconfig
