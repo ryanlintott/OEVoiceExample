@@ -24,7 +24,9 @@ struct IPACharacters: View {
                         .frame(width: Self.size, height: Self.size)
                         .contentShape(Rectangle())
                 }
+                #if os(iOS)
                 .buttonStyle(BorderlessButtonStyle())
+                #endif
             }
         }
     }

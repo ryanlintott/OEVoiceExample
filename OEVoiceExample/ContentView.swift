@@ -54,7 +54,7 @@ struct ContentView: View {
         identifier.replacingOccurrences(of: OEVoice.idPrefix, with: "")
     }
     
-    @available(iOS 15, *)
+    @available(iOS 15, watchOS 8, tvOS 15, *)
     var beowulf: AttributedString {
         [
             ("Hwæt", "ˈhwæt"),
@@ -96,7 +96,13 @@ struct ContentView: View {
                         Text(shortIdentifier(voice.identifier))
                     }
                 }
-                .pickerStyle(MenuPickerStyle())
+                .ifAvailable {
+                    if #available(tvOS 17, *) {
+                        $0.pickerStyle(.menu)
+                    } else {
+                        $0
+                    }
+                }
             }
             
             TextField("Filter", text: $filter) { isEditing in
@@ -116,7 +122,13 @@ struct ContentView: View {
                     Text(ipaString)
                 }
             }
-            .pickerStyle(WheelPickerStyle())
+            .ifAvailable {
+                if #available(tvOS 17, *) {
+                    $0.pickerStyle(.menu)
+                } else {
+                    $0
+                }
+            }
             
             Section(header: Text("IPA Word")) {
                 if voice != nil {
@@ -153,7 +165,7 @@ struct ContentView: View {
                 }
             }
             
-            if #available(iOS 15, *) {
+            if #available(iOS 15, watchOS 8, tvOS 15, *) {
                 // Characters that don't work with AttributedString and IPA
                 // Āā Ǣǣ Ēē Īī Ōō Ūū Ȳȳ Ææ Ðð Þþ Ƿƿ
                 Button {
