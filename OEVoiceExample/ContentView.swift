@@ -54,7 +54,7 @@ struct ContentView: View {
         identifier.replacingOccurrences(of: OEVoice.idPrefix, with: "")
     }
     
-    @available (iOS 15, *)
+    @available(iOS 15, *)
     var beowulf: AttributedString {
         [
             ("Hwæt", "ˈhwæt"),
@@ -147,7 +147,7 @@ struct ContentView: View {
                             .disabled(newAdjustment == nil)
                         }
                     }
-                    .padding()
+                    .padding(.vertical)
                 } else {
                     Text("No voices available")
                 }
@@ -156,16 +156,17 @@ struct ContentView: View {
             if #available(iOS 15, *) {
                 // Characters that don't work with AttributedString and IPA
                 // Āā Ǣǣ Ēē Īī Ōō Ūū Ȳȳ Ææ Ðð Þþ Ƿƿ
-                Text(beowulf)
-                    .onTapGesture {
-                        if let voice = voice {
-                            synthesizer.speak(beowulf, voice: voice)
-                        }
+                Button {
+                    if let voice = voice {
+                        synthesizer.speak(beowulf, voice: voice)
                     }
-                    .accessibilityAddTraits([.playsSound, .startsMediaSession])
+                } label: {
+                    Text(beowulf)
+                }
+                .accessibilityAddTraits([.playsSound, .startsMediaSession])
             }
             
-            Button("Test Voice") {
+            Button("speakOETest1") {
                 synthesizer.speakOETest1()
             }
         }

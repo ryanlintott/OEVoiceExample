@@ -12,16 +12,7 @@ struct IPACharacters: View {
     
     let action: (String) -> Void
     
-    let columns = [
-        GridItem(.fixed(size)),
-        GridItem(.fixed(size)),
-        GridItem(.fixed(size)),
-        GridItem(.fixed(size)),
-        GridItem(.fixed(size)),
-        GridItem(.fixed(size)),
-        GridItem(.fixed(size)),
-        GridItem(.fixed(size))
-    ]
+    let columns = Array(repeating: GridItem(.fixed(size)), count: 8)
     
     var body: some View {
         LazyVGrid(columns: columns) {
